@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Rest Api dan Bot Whastapp Open AI </title>
+	<meta name="description" content="Rest Api dan Bot Whastapp Open AI.">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+	<link rel="stylesheet" type="text/css" href="./assets/main.css">
+    <style>
+		
+
+    </style>
+</head>
+<body>
+    
+<div class="form">
+  <h1>WhatsApp API QR</h1>
+  <div id="qrcode-container">
+	<img src="./assets/loader.gif" alt="loading" id="qrcode" style="width: 250px;">
+  </div>
+	<div class="card">
+		<div class="title">Panduan</div>
+		<div class="body">
+			<p>
+				<li>Scan kode QR berikut dengan aplikasi WhatsApp anda, sebagaimana Whatsapp Web biasanya.</li>
+				<li>Sesi Whatsapp Web yang aktif akan keluar, diganti dengan server ini.</li>
+				<li><b>Gunakan dengan bijak.</b></li>
+			</p>
+		</div>
+	</div>
+
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.1.3/socket.io.js" crossorigin="anonymous"></script>
+		<script>
+			const qrcode = document.getElementById("qrcode");
+			const socket = io();
+
+			socket.on("qr", src => {
+				qrcode.setAttribute("src", src);
+				qrcode.setAttribute("alt", "qrcode");
+			});
+			socket.on("qrstatus", src => {
+				qrcode.setAttribute("src", src);
+				qrcode.setAttribute("alt", "loading");
+			});
+			
+			socket.on("log", log => {
+				console.log(log);
+			})
+			
+		</script>
+</body>
+</html>

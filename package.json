@@ -1,0 +1,38 @@
+{
+  "name": "mizab_whatsapp",
+  "version": "1.0.0",
+  "description": "WhatsApp Mizab Apps",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "whastapp"
+  ],
+  "author": "Yusuf Fadlulloh",
+  "license": "ISC",
+  "dependencies": {
+    "@adiwajshing/baileys": "^5.0.0",
+    "@adiwajshing/keyed-db": "^0.2.4",
+    "body-parser": "^1.20.2",
+    "dotenv": "^16.0.3",
+    "eslint": "^8.14.0",
+    "express": "^4.18.1",
+    "express-fileupload": "^1.4.0",
+    "ffmpeg": "^0.0.4",
+    "jest": "^28.0.3",
+    "jimp": "^0.16.1",
+    "link-preview-js": "^2.1.13",
+    "mysql": "^2.18.1",
+    "mysql2": "^3.1.2",
+    "nodemon": "^2.0.16",
+    "pm2": "^5.2.2",
+    "qrcode": "^1.5.1",
+    "qrcode-terminal": "^0.12.0",
+    "request": "^2.88.2",
+    "sequelize": "^6.29.0",
+    "sharp": "^0.29.3",
+    "socket.io": "^4.5.0"
+  }
+}
